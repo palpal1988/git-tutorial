@@ -43,7 +43,7 @@ group :development, :test do
   gem 'carrierwave'
 
 end
-#test
+#test fix-B
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
