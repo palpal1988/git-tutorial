@@ -45,6 +45,7 @@ group :development, :test do
 end
 #test feature-A
 #test fix-B
+#test feature-C2
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
