@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <h1>Listing Photos</h1> -->
+<div class="col-xs-12" style="margin-bottom:20px; margin-left:-15px;">
+  <div class="col-xs-4">
+    <%= button_to "＋写真を追加", new_photo_path,method: :get, class:"btn btn-success" %>
+  </div>
+  <div class="col-xs-4">
+    <%= button_to "ー写真を削除", new_photo_path,method: :get, class:"btn btn-danger" %>
+  </div>
+  <div class="col-xs-4">
+    <%= button_to "アルバムを作成", new_photo_path,method: :get, class:"btn btn-info" %>
+  </div>
+</div>
+<% @photos.each do |photo| %>
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom:30px">
+  <%= link_to image_tag(photo.image_url, alt:photo.title, class:"img-responsive"), photo if photo.image.present? %>
+  <%= photo.title %>
+  <%= check_box "photo", photo.id, {}, true, false %>
+</div>
+<% end %> 
+<!-- <table>
+  <thead>
+    <tr>
+     <th>Image</th>
+     <th>Title</th>
+     <th>Memory</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+  <%# @photos.each do |photo| %>
+  <tr>
+    <td><%#= photo.image %></td>
+    <td><%#= photo.title %></td>
+    <td><%#= photo.memory %></td>
+    <td><%#= link_to 'Show', photo %></td>
+    <td><%#= link_to 'Edit', edit_photo_path(photo) %></td>
+    <td><%#= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <%# end %>
+</tbody>
+</table> -->
